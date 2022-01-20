@@ -62,11 +62,14 @@ export default {
       .then(response => {
         return checkStatus(response);
       }).catch(e => {
-        if(e.status==500){
-          ctx.error({
-            statusCode: 500,
-            message: 'Network error'
-          })
+        console.log(123,e)
+        if(e){
+          if(e.status==500){
+              ctx.error({
+                statusCode: 500,
+                message: 'Network error'
+              })
+            }
         }
       })
 

@@ -4,11 +4,11 @@
         "API_ROOT_URL": "https://services.jd.com"
     },
     "test": {
-        "API_ROOT_URL": "https://services.jd.com"
+        "API_ROOT_URL": "https://services.jd1.com"
 
     },
     "prod": {
-        "API_ROOT_URL": "https://services.jd.com"
+        "API_ROOT_URL": "https://services.jd2.com"
 
 
     }
