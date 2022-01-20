@@ -1,0 +1,15 @@
+
+{
+    "dev": {
+        "API_ROOT_URL": "https://services.jd.com"
+    },
+    "test": {
+        "API_ROOT_URL": "https://services.jd.com"
+
+    },
+    "prod": {
+        "API_ROOT_URL": "https://services.jd.com"
+
+
+    }
+}

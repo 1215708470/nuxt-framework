@@ -1,0 +1,556 @@
+html {
+    font-family: 'Microsoft Yahei', "Heiti SC", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+    font-size: 12px;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    // -moz-osx-font-smoothing: grayscale;
+    // -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+body,
+html,
+#__nuxt,
+#__layout {
+    height: 100%;
+}
+
+body {
+    background-color: #f4f6f8;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+//body,
+//button,
+//input,
+//select,
+//textarea {
+//  font: 12px/1.5 tahoma, arial, \5b8b\4f53;
+//}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #333;
+}
+
+//a:hover {
+//  text-decoration: underline;
+//text-decoration: unset;
+//}
+
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+strong {
+    font-weight: 600;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+/*body {background: #F5F5F5;}*/
+input:focus::-webkit-input-placeholder {
+    color: #999;
+    /* #999是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值 */
+}
+
+/* Mozilla Firefox 4 to 18 */
+
+input:focus:-moz-placeholder {
+    color: #999;
+}
+
+/* Mozilla Firefox 19+ */
+
+input:focus::-moz-placeholder {
+    color: #999;
+}
+
+/* Internet Explorer 10+ */
+
+input:focus:-ms-input-placeholder {
+    color: #999;
+}
+
+.ml_10 {
+    margin-left: 10px;
+}
+
+.mt_10 {
+    margin-top: 10px;
+}
+
+.mr_4 {
+    margin-right: 4px;
+}
+
+.mr_10 {
+    margin-right: 4px;
+}
+
+.mr_20 {
+    margin-right: 20px;
+}
+
+.fs_12 {
+    font-size: 12px;
+}
+
+.fs_16 {
+    font-size: 16px;
+}
+
+.tc {
+    text-align: center;
+}
+
+.db {
+    display: block;
+}
+
+.flex_1 {
+    flex: 1;
+}
+
+// .el-message {
+//   top: 45% !important;
+//   min-width: 10px;
+// }
+
+.el-message {
+    min-width: 200px !important;
+    height: 36px !important;
+    background: #DFF1D8 !important;
+    top: 40% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    border: 1px solid #B6CDAF !important;
+    padding: 0 10px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .el-message__icon {
+        padding: 0 6px 0 0px !important;
+        margin-right: 0 !important;
+    }
+
+    .el-message__content {
+        color: #438A43;
+        // font-size: 14px;
+    }
+
+
+}
+
+.el-message--error {
+    background: #FFEAEA !important;
+    border: 1px solid #FFD0D2 !important;
+
+    // top: 45% !important;
+    // left: 54% !important;
+    .el-message__icon {
+        padding: 0 6px 0 0px !important;
+        margin-right: 0 !important;
+    }
+
+    .el-message__content {
+        color: #F3262D;
+        // font-size: 14px;
+    }
+
+
+}
+
+.bd_weixin_popup {
+    width: 250px !important;
+    height: 300px !important;
+}
+
+// .el-dialog__headerbtn {
+//   font-size: 26px !important;
+//   right: 10px !important;
+//   top: 6px !important;
+// }
+
+.el-dialog__headerbtn:hover .el-dialog__close {
+    color: #F43C42;
+}
+
+.ql-editor em {
+    font-style: italic;
+}
+
+.ql-editor.ql-blank::before {
+    color: #999;
+    font-style: normal;
+}
+
+.c_company {
+    background-color: #9eadfe;
+}
+
+.c_personal {
+    background-color: #fabf4c;
+}
+
+.c_666 {
+    color: #666;
+}
+
+.c_orange {
+    color: #FB6D30;
+}
+
+.c_blue {
+    color: #0066CC;
+}
+
+.c_green {
+    color: #50D285;
+}
+
+.c_primary {
+    color: #F3262D;
+}
+
+.c_ff0027 {
+    color: #FF0027;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.user_select {
+    user-select: none;
+}
+
+.btn_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.skill_padding {
+        padding: 32px 0 30px;
+    }
+
+    &.mt_35 {
+        margin-top: 35px;
+    }
+
+    .last_btn {
+        background-color: #ccc;
+        width: 250px;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+
+        &.active {
+            background-color: #F3262D;
+            border: none;
+
+            &:hover {
+                background-color: #F43C42;
+            }
+        }
+    }
+
+    .next_step,
+    .keep_btn {
+        background: #F3262D;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+        color: #fff;
+        font-size: 14px;
+
+        &:hover {
+            background-color: #F43C42;
+        }
+    }
+
+    .next_step {
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .keep_btn {
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .save_btn,
+    .cancel_btn {
+        width: 100px;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 3px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .save_btn {
+        color: #fff;
+        background: #F3262D;
+        margin-right: 20px;
+
+        &:hover {
+            background-color: #F43C42;
+        }
+    }
+}
+
+
+.el-input__inner {
+    color: #333;
+}
+
+/* 1 WebKit browsers
+2 Mozilla Firefox 4 to 18
+3 Mozilla Firefox 19+
+4  Internet Explorer 10+
+*/
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+    font-size: 12px;
+    color: #999 !important;
+}
+
+input::-webkit-input-placeholder {
+    color: #999 !important;
+    font-size: 12px;
+}
+
+.el-pagination button:disabled {
+    cursor: unset;
+}
+
+.service_center,
+.shop_wrap {
+    width: 1210px;
+    margin: 0 auto 50px;
+    min-height: 50vh;
+}
+
+.service_center {
+    display: flex;
+}
+
+.star_class {
+    .el-rate__icon {
+        margin-right: -2px;
+        font-size: 20px;
+    }
+}
+
+.pagination_wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .el-pager .active {
+        color: #f3262d;
+    }
+}
+
+.pages_submit_btn {
+    width: 50px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #DCDFE6;
+    color: #606266;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tooltip_wrap {
+    &.el-tooltip__popper.is-light {
+        color: #F3262D;
+        border: 1px solid #F3262D;
+    }
+
+    &.el-tooltip__popper.is-light[x-placement^=top] .popper__arrow {
+        border-top-color: #F3262D;
+    }
+
+    &.el-tooltip__popper.is-light[x-placement^=top] .popper__arrow:after {
+        border-top-color: #F3262D;
+    }
+}
+
+.el-form-item__error {
+    height: 18px;
+    line-height: 18px;
+    padding-top: 0;
+    padding-left: 22px;
+    background: url('~assets/img/icon-error.png') no-repeat left top;
+    background-size: 18px 18px;
+}
+
+.common_form {
+    .el-form-item {
+        &.pl_91 {
+            padding-left: 91px;
+        }
+
+        &.is-success .el-input__inner,
+        &.is-success .el-input__inner:focus,
+        &.is-success .el-textarea__inner,
+        &.is-success .el-textarea__inner:focus {
+            border-color: #ccc;
+        }
+    }
+
+    .el-input__inner,
+    .el-textarea__inner {
+        border-radius: 0;
+        color: #333;
+
+        &::-webkit-input-placeholder,
+        &::-moz-input-placeholder,
+        &::-ms-input-placeholder {
+            color: #999;
+        }
+    }
+
+    .el-input__inner {
+        height: 36px;
+        line-height: 36px;
+        border-color: #ccc;
+
+        &:focus {
+            border-color: #ccc;
+        }
+    }
+
+    .el-cascader,
+    .el-select {
+        .el-input {
+            &.is-focus {
+                .el-input__inner {
+                    border-color: #ccc;
+                }
+            }
+
+            .el-input__inner {
+                &:focus {
+                    border-color: #ccc;
+                }
+            }
+        }
+    }
+
+    .el-form-item__error {
+        left: 100%;
+        top: 9px;
+        width: 100%;
+        margin-left: 10px;
+        z-index: 10;
+    }
+}
+
+.el-scrollbar__wrap {
+    max-height: 300px;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #999;
+    font-size: 12px;
+}
+
+textarea:-moz-placeholder {
+    color: #999;
+    font-size: 12px;
+}
+
+textarea::-moz-placeholder {
+    color: #999;
+    font-size: 12px;
+}
+
+textarea:-ms-input-placeholder {
+  color: #999;
+  font-size: 12px;
+}
+.unit_text{
+  font-weight: 500;
+}
