@@ -7,9 +7,9 @@
 </template>
 <script>
 export default {
-    name:"Demotemplate",
-    props:['from','demoPageData'],
-    // inject:['from','demoPageData'],
+    // name:"Demotemplate",
+    // props:['from','demoPageData'],
+    inject:['from','demoPageData'],
 }
 </script>
 <style lang="less">

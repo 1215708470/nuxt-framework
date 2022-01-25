@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <!-- <Demo :demoPageData="demoPageData" :from="from"/> -->
+  <div class="demo-page">
+    <Demo />
     <div @click="handlData">handl</div>
     <div @click="getDatasPost">getDatasPost11</div>
     <div>{{ toutiaoData }}</div>
+    <div><img src="@/assets/img/nuxt.svg" alt="" /></div>
   </div>
 </template>
 
@@ -11,63 +12,81 @@
 import http from "~/plugins/http";
 import serviceHttp from "~/plugins/serviceHttp";
 import api from "~/plugins/api";
+import { mapMutations, mapState } from "vuex";
+
 export default {
   name: "DemoPage",
+    computed: {
+    ...mapState({
+      Token: "access_token"
+    })
+  },
   data() {
     return {
       demoPageData: [],
       from: {},
-      toutiaoData: []
-    }
-  },  
+      toutiaoData: [],
+    };
+  },
+  // 传给子组件使用
   provide() {
     return {
-      demoPageData: this.demoPageData,
-      from: this.from
-    }
+      demoPageData: this.toutiaoData,
+      from: this.from,
+    };
   },
   async asyncData(app) {
-    let toutiaoData
-          let params = { id: 10068, page: 0, size: 5 }
-    // 服务端网络请求
-     toutiaoData = await serviceHttp.get(app,api.demoapi1,params,)
-    // vuex
-  // app.store.commit('SAVE_TOKEN',999888)
-  // console.log('app',app.store.state)
-
-  
-    
-    return {
-      demoPageData: [{ a: 1 }, { b: 2 }],
-      from: { name: "大明" },
-      toutiaoData
-    }
+    let toutiaoData;
+    let params = { id: 10068, page: 0, size: 5 };
+    try {
+      // 服务端网络请求
+      toutiaoData = await serviceHttp.get(app, api.demoapi1, params);
+      // vuex
+      // app.store.commit('SAVE_TOKEN',999888)
+      console.log('app11',app.store.state)
+      return {
+        demoPageData: [{ a: 1 }, { b: 2 }],
+        from: { name: "大明" },
+        toutiaoData,
+      };
+    } catch (error) {}
   },
   methods: {
     handlData() {
-      this.demoPageData = [{ c: 3 }, { f: 2 }]
-      this.getDatas()
-
+      this.demoPageData = [{ c: 3 }, { f: 2 }];
+      this.getDatas();
     },
     async getDatas() {
-      let params = { id: 10068, page: 0, size: 5 }
-      let res = await http.get(api.demoapi1, params)
-      console.log('res22', res)
+      let params = { id: 10068, page: 0, size: 5 };
+      let res = await http.get(api.demoapi1, params);
+      console.log("res22", res);
       if (res.code == 0) {
-        this.toutiaoData = res.data
+        this.toutiaoData = res.data;
       }
     },
     async getDatasPost() {
-      let params = { id: 10068, page: 0, size: 5 }
-      let res = await http.post(api.demoapi1, params)
-      console.log('res22', res)
+      let params = { id: 10068, page: 0, size: 5 };
+      let res = await http.post(api.demoapi1, params);
+      console.log("res22", res);
       if (res.code == 0) {
-        this.toutiaoData = res.data
+        this.toutiaoData = res.data;
       }
-    }
+    },
   },
   mounted() {
+   this.$store.commit('SAVE_TOKEN',999888)
+   console.log("Token123",this.Token)
     // this.getDatas()
+  },
+};
+</script>
+<style lang="less">
+.demo-page {
+  height: 100vh;
+  background: url("~assets/img/nuxt.svg") no-repeat top;
+  background-size: 200px;
+  img {
+    width: 200px;
   }
 }
-</script>
+</style>

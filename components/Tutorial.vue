@@ -54,7 +54,5 @@ export default {
 <style lang="less">
   .index-page{
     height: 100vh;
-    background: url("~assets/img/nuxt.svg") no-repeat top;
-    background-size: 200px;
   }
 </style>
