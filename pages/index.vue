@@ -1,6 +1,7 @@
 <template>
   <div>
   <Tutorial/>
+  <nuxt-link to="/demo"><div>toDemopage</div></nuxt-link>
   </div>
 </template>
 

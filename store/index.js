@@ -17,14 +17,13 @@ const store = () =>
         state: {
           access_token: '',
             userInfo: {},
-            language: 'en' //zh设置语言
+            language: 'zh_CN' //zh设置语言
           },
 		  //设置
           mutations: {
             //保存
             'SET_USER_INFO': function (state, userInfo) {
               state.userInfo = userInfo;
-              console.log(1111, state.userInfo);
             },
             'SET_LANGUAGE': (state, language) => {
               localStorage.setItem('language', language)
@@ -53,8 +52,7 @@ const store = () =>
 				if (process.server) {
 					let cookies = new Cookies(req, res)
 					const token = cookies.get('access_token')
-          console.log('req.headers.cookie',req.headers.cookie,token)
-
+          console.log('req.headers.cookie',req.headers.cookie,"access_token:",token)
 					app.commit('SAVE_TOKEN', token)
 					app.access_token = token
 				}

@@ -32,20 +32,18 @@ service.interceptors.response.use(
 
       }
     }
-   
+
     return Promise.reject(error.response)
   }
 )
 /**请求成功 */
-
-
 export default {
   get(ctx, url, params) {
     let headers = {}
     console.log(ctx.error)
     if (ctx && ctx.store && ctx.store.state) {
       let token = ctx.store.state.access_token
-      console.log('token',token)
+      console.log('serviceToken', token)
       headers = {
         "Authorization": `Bearer ${token}`
       }
@@ -58,12 +56,12 @@ export default {
           "Content-Type": "application/json; charset=utf-8",
           ...headers
         },
-        
+
       })
       .then(response => {
         return checkStatus(response);
       }).catch(e => {
-        if(e.status==500){
+        if (e.status == 500) {
           ctx.error({
             statusCode: 500,
             message: 'Network error'

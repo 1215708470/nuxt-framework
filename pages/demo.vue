@@ -15,7 +15,28 @@ import api from "~/plugins/api";
 import { mapMutations, mapState } from "vuex";
 
 export default {
+  layout:"main-layout",
   name: "DemoPage",
+   head() {
+    return {
+      title:
+        "demo页面",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "demo页面描述"
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "demo页面关键词"
+        }
+      ]
+    };
+  },
     computed: {
     ...mapState({
       Token: "access_token"
@@ -58,18 +79,26 @@ export default {
     },
     async getDatas() {
       let params = { id: 10068, page: 0, size: 5 };
-      let res = await http.get(api.demoapi1, params);
-      console.log("res22", res);
-      if (res.code == 0) {
-        this.toutiaoData = res.data;
+      try {
+         let res = await http.get(api.demoapi1, params);
+        console.log("res22", res);
+        if (res.code == 0) {
+          this.toutiaoData = res.data;
+        }
+      } catch (error) {
+        
       }
     },
     async getDatasPost() {
       let params = { id: 10068, page: 0, size: 5 };
-      let res = await http.post(api.demoapi1, params);
-      console.log("res22", res);
-      if (res.code == 0) {
-        this.toutiaoData = res.data;
+      try {
+        let res = await http.post(api.demoapi1, params);
+        console.log("res22", res);
+        if (res.code == 0) {
+          this.toutiaoData = res.data;
+        }
+      } catch (error) {
+        console.log('error',error)
       }
     },
   },
