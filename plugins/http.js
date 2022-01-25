@@ -4,7 +4,7 @@ import qs from "qs";
 import store from '@/store'
 import CONFIG from '@/config';
 import Cookie from 'js-cookie'
-import {Message, Notification} from 'element-ui' // 这里使用了element-ui的消息提示方法，也可自行定义
+import {Message} from 'element-ui'  
 import {checkStatus} from './utils'
 
 const {
@@ -19,7 +19,6 @@ let service = axios.create({
 service.interceptors.request.use(
   config => {
     let Token = Cookie.get('access_token');
-    console.log('Token',Token)
     if (Token) {
       config.headers.Authorization = 'Bearer ' + Token
     }

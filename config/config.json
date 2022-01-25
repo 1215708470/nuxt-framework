@@ -8,7 +8,7 @@
 
     },
     "prod": {
-        "API_ROOT_URL": "https://services.jd.com"
+        "API_ROOT_URL": "https://services.jd2.com"
 
 
     }

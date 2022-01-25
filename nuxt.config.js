@@ -52,6 +52,10 @@ export default {
   modules: [
     '@nuxtjs/axios', '@nuxtjs/proxy'
   ],
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0' // default: localhost,
+  },
   axios: {
     proxy: true, // 表示开启代理
     prefix: '/', // 表示给请求url加个前缀 /api
@@ -67,6 +71,12 @@ export default {
     //     }
     // },
   },
+  router: {
+		prefetchLinks: false,  // 全局禁用所有链接上的预取
+	},
+	render: {
+		resourceHints: false,  // 添加prefetch和preload，以加快初始化页面加载时间。如果有许多页面和路由，可禁用此项
+	},
   vue: {
     config: {
       productionTip: true,
@@ -78,7 +88,7 @@ export default {
   build: {
     // transpile: [/^element-ui/],
     analyze: false,
-
+    cache: true,
 
     filenames: {
       chunk: ({ isDev }) => isDev ? '[name].js' : '[name][contenthash].js'
