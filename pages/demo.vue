@@ -10,7 +10,7 @@
 
 <script>
 import http from "~/plugins/http";
-import serviceHttp from "~/plugins/serviceHttp";
+import serverHttp from "~/plugins/serverHttp";
 import api from "~/plugins/api";
 import { mapMutations, mapState } from "vuex";
 
@@ -61,7 +61,7 @@ export default {
     let params = { id: 10068, page: 0, size: 5 };
     try {
       // 服务端网络请求
-      toutiaoData = await serviceHttp.get(app, api.demoapi1, params);
+      toutiaoData = await serverHttp.get(app, api.demoapi1, params);
       // vuex
       // app.store.commit('SAVE_TOKEN',999888)
       console.log('app11',app.store.state)
