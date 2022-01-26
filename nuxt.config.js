@@ -2,6 +2,7 @@ let CONFIG = require('./config')
 const TerserPlugin = require('terser-webpack-plugin');
 
 export default {
+  mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt_app_demo',
