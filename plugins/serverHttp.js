@@ -4,7 +4,7 @@ import qs from "qs";
 import CONFIG from '@/config';
 import {
   checkStatus
-} from './utils'
+} from '@/utils/utils'
 const {
   API_ROOT_URL,
 } = CONFIG;

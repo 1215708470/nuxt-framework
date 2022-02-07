@@ -5,7 +5,7 @@ import store from '@/store'
 import CONFIG from '@/config';
 import Cookie from 'js-cookie'
 import {Message} from 'element-ui'  
-import {checkStatus} from './utils'
+import {checkStatus} from '@/utils/utils'
 
 const {
   API_ROOT_URL,
