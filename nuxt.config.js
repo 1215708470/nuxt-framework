@@ -1,5 +1,9 @@
-let CONFIG = require('./config')
+let config = require('./config')
 const TerserPlugin = require('terser-webpack-plugin');
+const {
+  API_ROOT_URL,
+} = config.default;
+console.log('CONFIGAPI_ROOT_URL13',API_ROOT_URL)
 
 export default {
   mode: 'universal',
@@ -51,26 +55,28 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios', '@nuxtjs/proxy'
+    '@nuxtjs/axios',
   ],
   server: {
     port: 3000, // default: 3000
     host: '0.0.0.0' // default: localhost,
   },
   axios: {
-    proxy: true, // 表示开启代理
-    prefix: '/', // 表示给请求url加个前缀 /api
-    credentials: true // 表示跨域请求时是否需要使用凭证
+    // proxy: true, // 表示开启代理
+    // prefix: '/', // 表示给请求url加个前缀 /api
+    // credentials: true // 表示跨域请求时是否需要使用凭证
   },
   proxy: {
+    // '/api/': { target: API_ROOT_URL, pathRewrite: {'^/api/': ''} }
     // '/': {
     //     // 环境
-    //     // target: CONFIG.API_ROOT_URL,
+    //     // target: API_ROOT_URL,
     //     changeOrigin: true,	//是否跨域
     //     pathRewrite: {	//如原地址是:("/127.0.0.1/my-MMM/src/assets/data/users/login.php)
     //         '^/': ''	//需要重写的,下次请求时只需定写：("/apis/my-MMM/src/assets/data/users/login.php)
     //     }
     // },
+   
   },
   router: {
 		prefetchLinks: false,  // 全局禁用所有链接上的预取

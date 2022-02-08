@@ -26,6 +26,8 @@ service.interceptors.response.use(
     return resp
   },
   error => {
+  console.log(336,error)
+
     // console.log('接口请求发生错误', error)
     if (error.response) {
       if (error.response.status == 401) {
@@ -40,7 +42,6 @@ service.interceptors.response.use(
 export default {
   get(ctx, url, params) {
     let headers = {}
-    console.log(ctx.error)
     if (ctx && ctx.store && ctx.store.state) {
       let token = ctx.store.state.access_token
       console.log('serviceToken', token)
