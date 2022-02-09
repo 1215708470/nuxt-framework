@@ -55,7 +55,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
   ],
   server: {
     port: 3000, // default: 3000
