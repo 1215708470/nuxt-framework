@@ -3,9 +3,10 @@ import axios from "axios";
 import qs from "qs";
 import store from '@/store'
 import CONFIG from '@/config';
-import Cookie from 'js-cookie'
 import {Message} from 'element-ui'  
 import {checkStatus} from '@/utils/utils'
+import {setCookie,getCookie} from '@/utils/utils'
+
 
 const {
   API_ROOT_URL,
@@ -13,12 +14,12 @@ const {
 // import { Dialog, Toast } from "vant";
 
 let service = axios.create({
-  baseURL:API_ROOT_URL,
+  baseURL:process.env.SERVER_ENV=="dev"?"/api":API_ROOT_URL,//开发环境使用代理
   timeout: 10 * 1000
 })
 service.interceptors.request.use(
   config => {
-    let Token = Cookie.get('access_token');
+    let Token = getCookie('access_token');
     if (Token) {
       config.headers.Authorization = 'Bearer ' + Token
     }

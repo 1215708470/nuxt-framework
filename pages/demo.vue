@@ -13,6 +13,8 @@ import http from "~/plugins/http";
 import serverHttp from "~/plugins/serverHttp";
 import api from "~/plugins/api";
 import { mapMutations, mapState } from "vuex";
+import {setCookie,getCookie} from '@/utils/utils'
+
 
 export default {
   layout:"main-layout",
@@ -101,11 +103,17 @@ export default {
         console.log('error',error)
       }
     },
+    //登陆存储token
+    async loginHandl(){
+      setCookie("access_token",999999999666)
+    }
   },
   mounted() {
-   this.$store.commit('SAVE_TOKEN',999888)
+  //  this.$store.commit('SAVE_TOKEN',999888)
    console.log("Token123",this.Token)
     // this.getDatas()
+      setCookie("access_token",999999999666)
+
   },
 };
 </script>

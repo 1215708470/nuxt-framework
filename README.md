@@ -17,6 +17,19 @@ $ npm run start
 $ npm run generate
 ```
 
+## node-sass 安装
+NodeJS对应版本只能安装对应版本的node-sass
+Node 16	  node-sass: 6.0+	
+Node 15	  node-sass: 5.0+	
+Node 14	  node-sass: 4.14+	
+Node 13	  node-sass: 4.13+, <5.0	
+Node 12	  node-sass: 4.12+	
+Node 11	  node-sass: 4.10+, <5.0	
+Node 10	  node-sass: 4.9+, <6.0	
+Node 8	  node-sass: 4.5.3+, <5.0	
+Node <8	  node-sass: <5.0
+
+
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
 ## Special Directories

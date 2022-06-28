@@ -1,9 +1,11 @@
 import {
   Message
 } from 'element-ui'
+
+//客户端使用方法
 export function getCookie(name) {
-  var arr = []
-  var reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+  let arr = []
+  let reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
   if (arr == document.cookie.match(reg)) {
     return unescape(arr[2])
   } else {
@@ -11,8 +13,16 @@ export function getCookie(name) {
   }
 }
 
-/**请求成功 */
+//客户端使用方法
+export function setCookie(name, value, iDay){
+    let oDate=new Date();
+    oDate.setDate(oDate.getDate()+iDay);
+    document.cookie=name+'='+value+';expires='+oDate;
+}
+
+/**请求成功统一处理 */
 export function checkStatus(response) {
+  // console.log("respons1",response)
   /**获取文件流情况处理 */
   if (response && response.headers && response.headers.responseType == "blob") {
     return response.data
