@@ -71,7 +71,6 @@ export default {
     if(process.server){
       if (ctx && ctx.store && ctx.store.state) {
         let token = ctx.store.state.access_token
-        console.log('serviceToken', token)
         headers = {
           "Authorization": `Bearer ${token}`
         }
@@ -83,7 +82,8 @@ export default {
         params, // get 请求时带的参数
         timeout: 10000,
         headers: {
-          "Content-Type":"application/json;charset=utf-8"
+          "Content-Type":"application/json;charset=utf-8",
+          ...headers
         }
       })
       .then(response => {
