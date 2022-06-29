@@ -2,7 +2,7 @@ import {
   Message
 } from 'element-ui'
 
-//客户端使用方法
+//客户端获取cookie
 export function getCookie(name) {
   let arr = []
   let reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
@@ -13,11 +13,21 @@ export function getCookie(name) {
   }
 }
 
-//客户端使用方法
+//客户端设置cookie
 export function setCookie(name, value, iDay){
     let oDate=new Date();
     oDate.setDate(oDate.getDate()+iDay);
     document.cookie=name+'='+value+';expires='+oDate;
+}
+
+//客户端删除cookie
+export function delCookie(name){
+  var cval=getCookie(name);
+  if(cval){
+   var exp = new Date();
+   exp.setDate(exp.getDate() - 1);
+   document.cookie= name +"="+encodeURIComponent(cval)+";expires="+exp;
+  }
 }
 
 /**请求成功统一处理 */
