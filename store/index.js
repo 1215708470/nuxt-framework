@@ -48,7 +48,7 @@ const store = () =>
 
           },
 		actions: {
-			nuxtServerInit(app, { req, res }) {
+		nuxtServerInit(app, { req, res }) {
 				if (process.server) {
 					let cookies = new Cookies(req, res)
 					const token = cookies.get('access_token')
