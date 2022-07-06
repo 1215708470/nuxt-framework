@@ -20,11 +20,11 @@ service.interceptors.request.use(
   config => {
     //客户端请求头加token
     if(!process.server){
-    let Token = getCookie('access_token');
-    if (Token) {
-      config.headers.Authorization = 'Bearer ' + Token
+      let Token = getCookie('access_token');
+      if (Token) {
+        config.headers.Authorization = 'Bearer ' + Token
+      }
     }
-  }
     return config;
   },
   error => {
@@ -68,12 +68,10 @@ export default {
   get(url, params,ctx) {
     let headers = {}
     //服务端请求头加token
-    if(process.server){
-      if (ctx && ctx.store && ctx.store.state) {
-        let token = ctx.store.state.access_token
-        headers = {
-          "Authorization": `Bearer ${token}`
-        }
+    if (ctx && ctx.store && ctx.store.state) {
+      let token = ctx.store.state.access_token
+      headers = {
+        "Authorization": `Bearer ${token}`
       }
     }
     return service({

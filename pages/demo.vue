@@ -112,6 +112,7 @@ export default {
    console.log("Token123",this.Token)
     // this.getDatas()
       setCookie("access_token",999999999666)
+      console.log(this.$message("11"))
 
   },
 };
