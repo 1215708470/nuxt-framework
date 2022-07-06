@@ -4,15 +4,21 @@ import {
 
 //客户端获取cookie
 export function getCookie(name) {
-  let arr = []
-  let reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
-  if (arr == document.cookie.match(reg)) {
-    return unescape(arr[2])
-  } else {
-    return null
-  }
-}
+  var prefix = name + "="
+  var start = document.cookie.indexOf(prefix)
 
+  if (start == -1) {
+      return null;
+  }
+
+  var end = document.cookie.indexOf(";", start + prefix.length)
+  if (end == -1) {
+      end = document.cookie.length;
+  }
+
+  var value = document.cookie.substring(start + prefix.length, end)
+  return decodeURIComponent(value);
+}
 //客户端设置cookie
 export function setCookie(name, value, iDay){
     let oDate=new Date();
