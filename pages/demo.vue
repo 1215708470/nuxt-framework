@@ -8,6 +8,7 @@
     <div>
       <input type="text" v-model="input1" @change="inputCheckout($event.target,'input1')">
       <input type="text" v-model="input2"  @change="inputCheckout($event.target,'input2')">
+      <van-button type="primary">主要按钮</van-button>
     </div>
   </div>
 </template>

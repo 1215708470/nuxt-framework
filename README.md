@@ -17,6 +17,9 @@ $ npm run start
 $ npm run generate
 ```
 
+## vantUI文档
+https://vant-contrib.gitee.io/vant/v2/#/zh-CN/
+
 ## node-sass 安装
 NodeJS对应版本只能安装对应版本的node-sass
 Node 16	  node-sass: 6.0+	

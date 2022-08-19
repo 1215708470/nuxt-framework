@@ -1,9 +1,5 @@
 let config = require('./config')
-const TerserPlugin = require('terser-webpack-plugin');
-const {
-  API_ROOT_URL,
-} = config.default;
-console.log('CONFIGAPI_ROOT_URL13',API_ROOT_URL)
+let { API_ROOT_URL } = config.default;
 
 export default {
   mode: 'universal',
@@ -39,12 +35,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    'vant/lib/index.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/vant-ui',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

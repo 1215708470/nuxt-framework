@@ -10,7 +10,6 @@ import {setCookie,getCookie,delCookie} from '@/utils/utils'
 const {
   API_ROOT_URL,
 } = CONFIG;
-
 let service = axios.create({
   baseURL:process.env.SERVER_ENV=="dev"&&!process.server?"/api":API_ROOT_URL,//开发环境客户端使用代理
   timeout: 10 * 1000
