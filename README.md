@@ -1,5 +1,6 @@
-# nuxt_app_demo
+<a href="https://www.oscs1024.com/project/oscs/1215708470/nuxt-framework?ref=badge_small" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/1215708470/nuxt-framework.svg?size=small"/></a>
 [![OSCS Status](https://www.oscs1024.com/platform/badge/1215708470/nuxt-framework.svg?size=small)](https://www.oscs1024.com/project/1215708470/nuxt-framework?ref=badge_small)
+# nuxt_app_demo
 ## Build Setup
 
 ```bash
