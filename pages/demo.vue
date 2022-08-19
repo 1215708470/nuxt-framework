@@ -5,6 +5,10 @@
     <div @click="getDatasPost">getDatasPost11</div>
     <div>{{ toutiaoData }}</div>
     <div><img src="@/assets/img/nuxt.svg" alt="" /></div>
+    <div>
+      <input type="text" v-model="input1" @change="inputCheckout($event.target,'input1')">
+      <input type="text" v-model="input2"  @change="inputCheckout($event.target,'input2')">
+    </div>
   </div>
 </template>
 
@@ -48,6 +52,8 @@ export default {
       demoPageData: [],
       from: {},
       toutiaoData: [],
+      input1:'',
+      input2:'',
     };
   },
   // 传给子组件使用
@@ -105,6 +111,14 @@ export default {
     //登陆存储token
     async loginHandl(){
       setCookie("access_token",999999999666)
+    },
+    // 校验输入框的值
+    inputCheckout(target,key){
+      if(target.value>100){
+        target.value = 100
+        this[key] = 100
+        console.log(this.input1,this.input2)
+      }
     }
   },
   mounted() {
