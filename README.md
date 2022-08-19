@@ -1,5 +1,5 @@
 # nuxt_app_demo
-
+[![OSCS Status](https://www.oscs1024.com/platform/badge/1215708470/nuxt-framework.svg?size=small)](https://www.oscs1024.com/project/1215708470/nuxt-framework?ref=badge_small)
 ## Build Setup
 
 ```bash
